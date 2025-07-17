@@ -1,0 +1,70 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+ */
+.glass-morphism {
+        background: rgba(
+          255,
+          255,
+          255,
+          0.2
+        ); /* Slightly transparent white background */
+        backdrop-filter: blur(10px); /* Blur effect */
+        -webkit-backdrop-filter: blur(10px); /* Safari support */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Subtle shadow */
+        border-radius: 20px; /* Rounded corners */
+      }
+  .transition{
+    transition: 0.5s ease-in-out;
+    transform: scale(1.2);
+  }
+
+  /* ==== Folder mask with notch ==== */
+.folder-mask {
+  position: relative;
+  border-radius: 1rem;          /* large rounded corners */
+  overflow: hidden;             /* clip the spotlight + notch */
+  height: 480px;                /* adjust to taste */
+}
+
+/* little notch cut-out at the top (pseudo-element) */
+.folder-mask::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 140px;                 /* notch width */
+  height: 40px;                 /* notch depth */
+  transform: translateX(-50%);
+  background: #000;             /* same as page bg */
+}
+
+/* ==== Spotlight ==== */
+.spotlight {
+  position: absolute;
+  inset: 0;
+  /* Radial glow centered near the top */
+  background: radial-gradient(
+      ellipse at center 0%,
+      rgba(255, 238, 0, 0.9) 0%,
+      rgba(255, 238, 0, 0.6) 25%,
+      rgba(255, 220, 0, 0.3) 40%,
+      transparent 60%
+    ),
+    /* subtle columns (vertical beams) */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.07) 0px,
+      rgba(255, 255, 255, 0.07) 4px,
+      transparent 4px,
+      transparent 40px
+    );
+  /* dark fade toward the bottom (matches your screenshot) */
+  mask-image: linear-gradient(to bottom, white 30%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom, white 30%, transparent 80%);
+  mix-blend-mode: screen; /* optional: lets the glow brighten underlying colors */
+}
