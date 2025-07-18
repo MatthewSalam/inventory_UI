@@ -88,8 +88,8 @@ const Staff = () => {
     <button className="bg-green-600 text-white px-4 py-2 rounded" onClick={() => setIsOpen(true)}>Add New Staff</button>
 
     {isOpen && (
-      <div className="fixed inset-0 flex items-center justify-center bg-gray-400 bg-opacity-50 z-50">
-        <div className="bg-white p-6 rounded-md w-[90%]  relative">
+      <div className="fixed inset-0 flex items-center justify-center bg-gray-400/50 z-50">
+        <div className="bg-white p-6 rounded-md w-[30%]  relative">
           <div>
             <h3 className="text-2xl mb-4 font-medium">Register Staff</h3>
             <button
@@ -99,7 +99,7 @@ const Staff = () => {
             &times;
           </button>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-5 space-y-3'>
+          <div className='grid grid-cols-1 md:grid-cols-1 gap-1.5 space-y-3'>
             <InputField id="firstname" placeholder="First name" minLength="2" onChange={(e) => setFname(e.target.value)} value={fname} required />
             <InputField id="lastname" placeholder="Last name" minLength="2" onChange={(e) => setLname(e.target.value)} value={lname} required />
             <InputField id="username" placeholder="Username" minLength="4" onChange={(e) => setUserName(e.target.value)} value={username} required />
@@ -134,6 +134,7 @@ const Staff = () => {
       <table className='table-auto border-collapse border border-gray-300'>
         <thead className='bg-gray-200'>
           <tr>
+            {/* <th className="border px-4 py-2 w-10">Staff ID</th> */}
             <th className="border px-4 py-2">First name</th>
             <th className="border px-4 py-2">Last name</th>
             <th className="border px-4 py-2">Username</th>
@@ -154,6 +155,7 @@ const Staff = () => {
         <>          
         {staff.map((staf) => (
               <tr key={staf.id}>
+                {/* <td className='border px-4 py-2'>{staf.id}</td> */}
                 <td className="border px-4 py-2">{staf.firstname}</td>
                 <td className="border px-4 py-2">{staf.lastname}</td>
                 <td className="border px-4 py-2">{staf.username}</td>

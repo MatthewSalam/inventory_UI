@@ -110,13 +110,13 @@ const Order_detail = () => {
         <button className="bg-green-600 text-white px-4 py-2 rounded" onClick={() => setAddModal(true)}>Add New Order_detail</button>
 
         {addModal && (
-          <div className="fixed inset-0 flex items-center justify-center bg-gray-400 bg-opacity-50 z-50">
-            <div className="bg-white p-6 rounded-md w-[90%]  relative">
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-400/50 z-50">
+            <div className="bg-white p-6 rounded-md w-[30%]  relative">
               <div onClick={() => setAddModal(false)} className='flex justify-between text-2xl mb-2 cursor-pointer'>
                 <h3 className="text-2xl mb-4 font-medium">Add new Order_detail</h3>
                 <MdClose className='transition-300 ease-in-out hover:scale-110 hover:text-blue-500' />
               </div> 
-              <div className='grid grid-cols-2 md:grid-cols-3 gap-5'>
+              <div className='grid grid-cols-1 md:grid-cols-1 gap-5'>
                 <select
                       className="border rounded px-3 py-2 outline-none focus:ring w-full bg-white"
                       value={orderID}
@@ -252,7 +252,7 @@ const Order_detail = () => {
 
       <hr className="my-8 border-t border-gray-300" />
 
-      <h3 className='text-2xl mb-4 font-medium'>All Products</h3>
+      <h3 className='text-2xl mb-4 font-medium'>All Order_Details</h3>
       <div className='overflow-x-auto'>
       <table className='table-auto border-collapse border border-gray-300'>
         <thead className='bg-gray-200'>

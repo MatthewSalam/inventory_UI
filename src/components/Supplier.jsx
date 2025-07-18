@@ -74,13 +74,13 @@ const Supplier = () => {
         <button className="bg-green-600 text-white px-4 py-2 rounded" onClick={() => setAddModal(true)}>Add New Supplier</button>
 
         {addModal && (
-                  <div className="fixed inset-0 flex items-center justify-center bg-gray-400 bg-opacity-50 z-50">
-                    <div className="bg-white p-6 rounded-md w-[90%]  relative">
+                  <div className="fixed inset-0 flex items-center justify-center bg-gray-400/50 z-50">
+                    <div className="bg-white p-6 rounded-md w-[30%]  relative">
                       <div onClick={() => setAddModal(false)} className='flex justify-between text-2xl mb-2 cursor-pointer'>
                         <h3 className="text-2xl mb-4 font-medium">Add new Supplier</h3>
                         <MdClose className='transition-300 ease-in-out hover:scale-110 text-gray-700 hover:text-red-600' />
                       </div> 
-                      <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+                      <div className='grid grid-cols-1 md:grid-cols-1 gap-5'>
                         <InputField placeholder="Supplier name" minLength="2" onChange={(e) => setSname(e.target.value)} value={sname} required />
                         <InputField placeholder="Supplier Address" minLength="2" onChange={(e) => setSaddress(e.target.value)} value={saddress} required />
                         <InputField placeholder="Supplier Contact info" minLength="2" onChange={(e) => setSphone(e.target.value)} value={sphone} required />
@@ -151,7 +151,7 @@ const Supplier = () => {
 
       <hr className="my-8 border-t border-gray-300" />
 
-      <h3 className="text-2xl mb-4 font-medium">All Categories</h3>
+      <h3 className="text-2xl mb-4 font-medium">All Suppliers</h3>
       <table className="min-w-full border">
         <thead className='bg-gray-200'>
           <tr>

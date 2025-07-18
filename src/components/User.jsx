@@ -76,18 +76,18 @@ const User = () => {
       <h2 className="text-2xl mb-4">Users</h2>
 
       
-      <div className='w-full flex flex-col m-7'>
+      <div className='w-full flex m-7'>
 
         <button className="bg-green-600 text-white px-4 py-2 rounded" onClick={() => setAddModal(true)}>Add New User</button>
 
                 {addModal && (
-          <div className="fixed inset-0 flex items-center justify-center bg-gray-400 bg-opacity-50 z-50">
-            <div className="bg-white p-6 rounded-md w-[90%]  relative">
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-400/50 bg-opacity-50 z-50">
+            <div className="bg-white p-6 rounded-md w-[30%]  relative">
               <div onClick={() => setAddModal(false)} className='flex justify-between text-2xl mb-2 cursor-pointer'>
-                <h3 className="text-2xl mb-4 font-medium">Add new Category</h3>
+                <h3 className="text-2xl mb-4 font-medium">Add new User</h3>
                 <MdClose className='transition-300 ease-in-out hover:scale-110 text-gray-700 hover:text-red-600' />
               </div> 
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+              <div className='grid grid-cols-1 md:grid-cols-1 gap-5'>
                 <InputField placeholder="Last name" minLength="2" onChange={(e) => setLname(e.target.value)} value={lname} required/>
                 <InputField placeholder="First name" minLength="2" onChange={(e) => setFname(e.target.value)} value={fname} required/>
                 <InputField placeholder="Email" type='email' minLength="2" onChange={(e) => setEmail(e.target.value)} value={email} required/>
@@ -158,7 +158,7 @@ const User = () => {
 
       <hr className="my-8 border-t border-gray-300" />
 
-      <h3 className='text-2xl mb-4 font-medium'>All Products</h3>
+      <h3 className='text-2xl mb-4 font-medium'>All Users</h3>
 
       <div className='overflow-x-auto'>
         <table className="table-auto w-full border-collapse border border-gray-300">

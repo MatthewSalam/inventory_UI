@@ -100,20 +100,20 @@ const Product = () => {
         <button className="bg-green-600 text-white px-4 py-2 rounded" onClick={() => setAddModal(true)}>Add New Product</button>
 
         {addModal && (
-          <div className="fixed inset-0 flex items-center justify-center bg-gray-400 bg-opacity-50 z-50">
-            <div className="bg-white p-6 rounded-md w-[90%]  relative">
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-400/50 bg-opacity-500 z-50">
+            <div className="bg-white p-6 rounded-md w-[30%]  relative">
               <div onClick={() => setAddModal(false)} className='flex justify-between text-2xl mb-2 cursor-pointer'>
                 <h3 className="text-2xl mb-4 font-medium">Add new Product</h3>
                 <MdClose className='transition-300 ease-in-out hover:scale-110 hover:text-blue-500' />
               </div> 
-              <div className='grid grid-cols-2 md:grid-cols-3 gap-5'>
+              <div className='grid grid-cols-1 md:grid-cols-1 gap-5'>
                 <InputField placeholder="Product name" minLength="2" onChange={(e) => setPname(e.target.value)} value={pname} required />
                 <InputField placeholder="Product Description" minLength="2" onChange={(e) => setPdesc(e.target.value)} value={pdesc} required />
                 <InputField placeholder="Additional Details (Optional)" minLength="2" onChange={(e) => setPdetails(e.target.value)} value={pdetails} />
                 <InputField placeholder="Unit" type='number' onChange={(e) => setPunit(e.target.value)} value={punit} />
                 <InputField placeholder="Price" minLength="2" onChange={(e) => setPrice(e.target.value)} value={price} />
                 <select
-                      className="border rounded px-3 py-2 outline-none focus:ring w-full bg-white"
+                      className="border rounded px-3 py-2 outline-none focus:ring w-full bg-white mb-3"
                       value={catID}
                       onChange={(e) => setCatID(e.target.value)}
                           >
@@ -127,9 +127,9 @@ const Product = () => {
                           ))}
                         </select>
               </div>
-              <button
+                  <button
                     onClick={handleCreate}
-                    className="font-semibold bottom-2 py-2 px-4 rounded-full bg-blue-500 hover:bg-cyan-500/80 h-max self-end"
+                    className="mx-auto font-semibold bottom-2 py-2 px-4 rounded-full bg-blue-500 hover:bg-cyan-500/80 h-max"
                   >
                     Register
                   </button>
